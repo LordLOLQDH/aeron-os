@@ -24,15 +24,27 @@ The Aero branding assets are stored centrally in:
 
 `assets/branding/logos/`
 
-Current logo assets:
+The three logo variants have defined roles:
 
-![Aero logo 1](assets/branding/logos/aero-logo-1.png)
+| Asset | Intended use |
+|---|---|
+| `aero-logo-1.png` | **Taskbar logo** — Aero's taskbar / launcher / application identity |
+| `aero-logo-2.png` | **Normal logo** — general Aero OS branding, boot screen, desktop, installer and documentation |
+| `aero-logo-3.png` | **Shell logo** — Aero Shell and shell-focused interfaces |
 
-![Aero logo 2](assets/branding/logos/aero-logo-2.png)
+### Taskbar logo
 
-![Aero logo 3](assets/branding/logos/aero-logo-3.png)
+![Aero taskbar logo](assets/branding/logos/aero-logo-1.png)
 
-These files are the project's original uploaded logo assets and can be reused by Aero components such as the boot screen, desktop, HUD, installer, documentation and future application interfaces.
+### Normal logo
+
+![Aero normal logo](assets/branding/logos/aero-logo-2.png)
+
+### Shell logo
+
+![Aero Shell logo](assets/branding/logos/aero-logo-3.png)
+
+These files are the project's original uploaded logo assets. Their roles should remain consistent across the Aero ecosystem.
 
 ## Core principles
 
