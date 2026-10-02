@@ -34,15 +34,27 @@ The three logo variants have defined roles:
 
 ### Taskbar logo
 
-![Aero taskbar logo](assets/branding/logos/aero-logo-1.png)
+<p align="center">
+  <img src="assets/branding/logos/aero-logo-1.png" alt="Aero taskbar logo" width="180">
+</p>
+
+Used for the **Aero taskbar, launcher and application identity**.
 
 ### Normal logo
 
-![Aero normal logo](assets/branding/logos/aero-logo-2.png)
+<p align="center">
+  <img src="assets/branding/logos/aero-logo-2.png" alt="Aero normal logo" width="260">
+</p>
+
+Used as the **standard Aero OS logo** throughout the operating system.
 
 ### Shell logo
 
-![Aero Shell logo](assets/branding/logos/aero-logo-3.png)
+<p align="center">
+  <img src="assets/branding/logos/aero-logo-3.png" alt="Aero Shell logo" width="260">
+</p>
+
+Used specifically for the **Aero Shell and shell-focused interfaces**.
 
 These files are the project's original uploaded logo assets. Their roles should remain consistent across the Aero ecosystem.
 
