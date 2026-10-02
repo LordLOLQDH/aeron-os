@@ -1,0 +1,13 @@
+# Aero Shell – frühe Zsh-Konfiguration
+autoload -Uz compinit && compinit
+setopt HIST_IGNORE_DUPS
+setopt AUTO_CD
+
+export EDITOR="${EDITOR:-nano}"
+export VISUAL="${VISUAL:-$EDITOR}"
+
+alias ll='ls -lah'
+alias la='ls -A'
+alias aero-update='aero update'
+
+# Aero-Befehle können später hier um weitere Shell-Funktionen ergänzt werden.
