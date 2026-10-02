@@ -1,13 +1,17 @@
-# Aero Shell – frühe Zsh-Konfiguration
+# Aero Shell – Zsh-Grundkonfiguration
 autoload -Uz compinit && compinit
 setopt HIST_IGNORE_DUPS
+setopt HIST_REDUCE_BLANKS
 setopt AUTO_CD
+setopt INTERACTIVE_COMMENTS
 
 export EDITOR="${EDITOR:-nano}"
 export VISUAL="${VISUAL:-$EDITOR}"
 
 alias ll='ls -lah'
 alias la='ls -A'
+alias l='ls -CF'
 alias aero-update='aero update'
+alias aero-status='aero status'
 
-# Aero-Befehle können später hier um weitere Shell-Funktionen ergänzt werden.
+# Aero soll normale Linux-Befehle nicht ersetzen, sondern schneller erreichbar machen.
