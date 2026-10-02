@@ -1,0 +1,18 @@
+# Entwicklungsartefakte
+*.iso
+*.img
+*.qcow2
+*.raw
+*.log
+
+# Build-Ausgaben
+out/
+build/
+work/
+
+# Lokale VM-/Host-Dateien
+.vagrant/
+.virtualbox/
+
+# Windows-Shared-Ordner: niemals Teil des Aero-Builds
+windows-shared/
