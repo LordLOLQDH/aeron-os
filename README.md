@@ -1,101 +1,101 @@
 # Aero OS
 
-> Fast. Minimal. Yours.
+> Schnell. Minimal. Deins.
 
-Aero OS is a minimalist, fast, keyboard-oriented operating system built on top of Arch Linux.
+Aero OS ist ein minimalistisches, schnelles und tastaturorientiertes Betriebssystem auf Basis von Arch Linux.
 
-The central idea is simple:
+Die zentrale Idee ist einfach:
 
-> If Linux can do it, Aero should provide a fast way to do it through the Aero Shell.
+> Wenn Linux etwas kann, soll Aero einen schnellen Weg bieten, es über die Aero Shell zu erledigen.
 
-Aero is intended to become a complete ecosystem rather than simply an Arch Linux installation with a custom theme.
+Aero soll zu einem vollständigen Ökosystem werden und nicht nur eine Arch-Linux-Installation mit einem eigenen Design sein.
 
-## Project status
+## Projektstatus
 
-**Early development / pre-alpha**
+**Frühe Entwicklung / Pre-Alpha**
 
-Aero OS is currently in the foundation stage. The project is being built incrementally, with the first goal being a real, bootable Aero prototype that can be developed and tested in a virtual machine.
+Aero OS befindet sich derzeit in der Grundlagenphase. Das Projekt wird schrittweise aufgebaut. Das erste Ziel ist ein echtes, bootfähiges Aero-Prototypsystem, das in einer virtuellen Maschine entwickelt und getestet werden kann.
 
-Nothing in this repository should currently be considered production-ready.
+Nichts in diesem Repository sollte derzeit als produktionsbereit betrachtet werden.
 
 ## Branding
 
-The Aero branding assets are stored centrally in:
+Die Branding-Assets von Aero befinden sich zentral in:
 
 `assets/branding/logos/`
 
-The three logo variants have defined roles:
+Die drei Logo-Varianten haben festgelegte Einsatzbereiche:
 
-| Asset | Intended use |
+| Datei | Verwendung |
 |---|---|
-| `aero-logo-1.png` | **Taskbar logo** — Aero's taskbar / launcher / application identity |
-| `aero-logo-2.png` | **Normal logo** — general Aero OS branding, boot screen, desktop, installer and documentation |
-| `aero-logo-3.png` | **Shell logo** — Aero Shell and shell-focused interfaces |
+| `aero-logo-1.png` | **Taskleisten-Logo** — für Aero-Taskleiste, Launcher und Anwendungsidentität |
+| `aero-logo-2.png` | **Normales Logo** — allgemeines Aero-OS-Branding, Bootbildschirm, Desktop, Installer und Dokumentation |
+| `aero-logo-3.png` | **Shell-Logo** — Aero Shell und shellbezogene Oberflächen |
 
-### Taskbar logo
-
-<p align="center">
-  <img src="assets/branding/logos/aero-logo-1.png" alt="Aero taskbar logo" width="180">
-</p>
-
-Used for the **Aero taskbar, launcher and application identity**.
-
-### Normal logo
+### Taskleisten-Logo
 
 <p align="center">
-  <img src="assets/branding/logos/aero-logo-2.png" alt="Aero normal logo" width="260">
+  <img src="assets/branding/logos/aero-logo-1.png" alt="Aero Taskleisten-Logo" width="180">
 </p>
 
-Used as the **standard Aero OS logo** throughout the operating system.
+Wird für die **Aero-Taskleiste, den Launcher und die Anwendungsidentität** verwendet.
 
-### Shell logo
+### Normales Logo
 
 <p align="center">
-  <img src="assets/branding/logos/aero-logo-3.png" alt="Aero Shell logo" width="260">
+  <img src="assets/branding/logos/aero-logo-2.png" alt="Aero normales Logo" width="260">
 </p>
 
-Used specifically for the **Aero Shell and shell-focused interfaces**.
+Wird als **Standardlogo von Aero OS** im gesamten Betriebssystem verwendet.
 
-These files are the project's original uploaded logo assets. Their roles should remain consistent across the Aero ecosystem.
+### Shell-Logo
 
-## Core principles
+<p align="center">
+  <img src="assets/branding/logos/aero-logo-3.png" alt="Aero Shell Logo" width="260">
+</p>
 
-- **Shell first** — the Aero Shell is the central working environment.
-- **Fast** — avoid unnecessary services, animations and resource usage.
-- **Keyboard oriented** — common tasks should be fast without a mouse.
-- **GUI when useful** — graphical applications remain fully usable.
-- **Arch based** — Aero uses Arch Linux as its base.
-- **Open and free** — the project is intended to remain usable and developable with free/open-source tooling and infrastructure wherever practical.
-- **Modular** — Aero components should be independently versioned and maintainable.
-- **Recoverable** — Aero Rescue is intended to provide an independent recovery environment for serious system problems.
+Wird speziell für die **Aero Shell und shellbezogene Oberflächen** verwendet.
 
-## Planned ecosystem
+Diese Dateien sind die ursprünglichen hochgeladenen Logo-Assets des Projekts. Ihre jeweiligen Einsatzbereiche sollen im gesamten Aero-Ökosystem einheitlich bleiben.
+
+## Grundprinzipien
+
+- **Shell zuerst** — die Aero Shell ist die zentrale Arbeitsumgebung.
+- **Schnell** — unnötige Dienste, Animationen und Ressourcenverbrauch vermeiden.
+- **Tastaturorientiert** — häufige Aufgaben sollen schnell ohne Maus erledigt werden können.
+- **GUI, wenn sie sinnvoll ist** — grafische Anwendungen bleiben vollständig nutzbar.
+- **Auf Arch basierend** — Aero verwendet Arch Linux als Grundlage.
+- **Offen und kostenlos** — das Projekt soll nach Möglichkeit mit kostenloser und Open-Source-Software sowie entsprechender Infrastruktur nutzbar und entwickelbar bleiben.
+- **Modular** — Aero-Komponenten sollen unabhängig versioniert und gewartet werden können.
+- **Wiederherstellbar** — Aero Rescue soll eine unabhängige Wiederherstellungsumgebung für schwerwiegende Systemprobleme bereitstellen.
+
+## Geplantes Ökosystem
 
 ### Aero Shell
 
-The central Aero environment, based on Zsh and extended with Aero-specific commands.
+Die zentrale Aero-Umgebung auf Basis von Zsh, erweitert um Aero-spezifische Befehle.
 
-Planned capabilities include:
+Geplante Funktionen:
 
-- intelligent completion
-- syntax highlighting
-- command history
-- aliases
-- file management
-- system administration
-- package management
-- programming workflows
+- intelligente Vervollständigung
+- Syntaxhervorhebung
+- Befehlsverlauf
+- Aliase
+- Dateiverwaltung
+- Systemverwaltung
+- Paketverwaltung
+- Programmier-Workflows
 - Git
 - Python
-- networking
-- media
-- web access
-- email
-- downloads
-- search
-- Aero-specific commands
+- Netzwerkfunktionen
+- Medien
+- Webzugriff
+- E-Mail
+- Downloads
+- Suche
+- Aero-spezifische Befehle
 
-Examples:
+Beispiele:
 
 ```bash
 search "Arch Linux"
@@ -106,151 +106,151 @@ download https://example.com/file.zip
 
 ### Aero HUD
 
-A lightweight shell HUD that can appear above the running system.
+Ein leichtgewichtiges Shell-HUD, das über dem laufenden System angezeigt werden kann.
 
-The planned default shortcut is:
+Der geplante Standard-Shortcut ist:
 
 ```text
 F12
 ```
 
-The HUD should allow users to access the Aero Shell quickly without making the graphical desktop the center of the operating system.
+Das HUD soll einen schnellen Zugriff auf die Aero Shell ermöglichen, ohne dass der grafische Desktop zum Mittelpunkt des Betriebssystems wird.
 
 ### Aero Desktop
 
-A minimal graphical environment designed around:
+Eine minimalistische grafische Umgebung mit Fokus auf:
 
-- black / deep-dark visuals
-- amber accents
-- keyboard control
-- touch support
-- low resource usage
-- restrained animations
-- subtle transparency
+- schwarze / tiefdunkle Darstellung
+- bernsteinfarbene Akzente
+- Tastatursteuerung
+- Touch-Unterstützung
+- geringen Ressourcenverbrauch
+- zurückhaltende Animationen
+- dezente Transparenz
 
-The desktop is an additional way to work with Aero, not a replacement for the shell.
+Der Desktop ist eine zusätzliche Möglichkeit, mit Aero zu arbeiten, und kein Ersatz für die Shell.
 
 ### Aero Browser
 
-A dedicated browser application with an Aero interface.
+Eine eigene Browser-Anwendung mit Aero-Oberfläche.
 
-Planned features include:
+Geplante Funktionen:
 
-- tabs
-- windows
-- history
-- bookmarks
-- downloads
-- password management
-- search engine selection
-- keyboard control
-- touch control
+- Tabs
+- Fenster
+- Verlauf
+- Lesezeichen
+- Downloads
+- Passwortverwaltung
+- Auswahl der Suchmaschine
+- Tastatursteuerung
+- Touch-Steuerung
 
-Aero will use an existing free/open-source browser engine rather than implementing a complete browser rendering engine from scratch.
+Aero soll eine bestehende freie/Open-Source-Browser-Engine verwenden, anstatt eine vollständige Rendering-Engine von Grund auf selbst zu entwickeln.
 
 ### Aero Private
 
-A separate private browsing environment focused on local privacy.
+Eine separate private Browser-Umgebung mit Schwerpunkt auf lokaler Privatsphäre.
 
-Planned features include:
+Geplante Funktionen:
 
-- no persistent history
-- temporary cookies
-- temporary website data
-- private tabs
-- automatic cleanup
-- optional automatic deletion
-- session deletion when the private browser closes
+- kein dauerhaft gespeicherter Verlauf
+- temporäre Cookies
+- temporäre Websitedaten
+- private Tabs
+- automatische Bereinigung
+- optionale automatische Löschung
+- Löschen der Sitzung beim Schließen des privaten Browsers
 
-Aero Private is intended to improve local privacy. It is not intended to bypass network monitoring or external controls.
+Aero Private soll die lokale Privatsphäre verbessern. Es ist nicht dafür vorgesehen, Netzwerküberwachung oder externe Kontrollen zu umgehen.
 
 ### Aero Search
 
-A search interface available from both the graphical environment and Aero Shell.
+Eine Suchoberfläche, die sowohl aus der grafischen Umgebung als auch über die Aero Shell verfügbar sein soll.
 
-Long-term plans include an independent index and ranking system, while allowing users to select other search providers.
+Langfristig ist ein eigener Index mit einem eigenen Ranking-System geplant. Gleichzeitig sollen Nutzer andere Suchanbieter auswählen können.
 
-Possible providers include:
+Mögliche Anbieter:
 
 - Aero Search
 - Google
 - DuckDuckGo
 - Bing
 - Brave Search
-- custom search URL
+- eigene Such-URL
 
 ### Aero Rescue
 
-An integrated emergency and recovery environment.
+Eine integrierte Notfall- und Wiederherstellungsumgebung.
 
-Planned capabilities include:
+Geplante Funktionen:
 
-- system diagnostics
-- filesystem checks and repair
-- package repair
-- configuration repair
-- bootloader repair
-- log inspection
-- malware checks
-- file backup
-- network recovery
-- Aero reset
-- disk and partition inspection
+- Systemdiagnose
+- Dateisystemprüfung und -reparatur
+- Paket-Reparatur
+- Reparatur von Konfigurationen
+- Bootloader-Reparatur
+- Protokollanalyse
+- Malware-Prüfungen
+- Dateisicherung
+- Netzwerk-Wiederherstellung
+- Aero-Reset
+- Überprüfung von Datenträgern und Partitionen
 
-Planned commands:
+Geplante Befehle:
 
 ```bash
 aero rescue -on
 aero rescue -full
 ```
 
-`aero rescue -on` is intended to open a rescue console while the normal Aero system remains available.
+`aero rescue -on` soll eine Rescue-Konsole öffnen, während das normale Aero-System weiterhin verfügbar bleibt.
 
-`aero rescue -full` is intended to reboot directly into an independent Aero Rescue environment.
+`aero rescue -full` soll direkt in eine unabhängige Aero-Rescue-Umgebung neu starten.
 
 ### Aero Studio
 
-A future development environment for the Aero ecosystem.
+Eine zukünftige Entwicklungsumgebung für das Aero-Ökosystem.
 
-Planned functionality:
+Geplante Funktionen:
 
-- code editor
-- project management
-- terminal
+- Code-Editor
+- Projektverwaltung
+- Terminal
 - Git
-- build system
-- package building
-- debugging
+- Build-System
+- Paket-Erstellung
+- Debugging
 - Aero SDK
-- project templates
-- documentation
-- release creation
+- Projektvorlagen
+- Dokumentation
+- Erstellung von Releases
 
 ### Aero Update
 
-Aero is designed around a single update workflow.
+Aero ist auf einen einzigen Update-Workflow ausgelegt.
 
-The normal Arch command remains available:
+Der normale Arch-Befehl bleibt verfügbar:
 
 ```bash
 sudo pacman -Syu
 ```
 
-Aero will additionally provide:
+Zusätzlich wird Aero bereitstellen:
 
 ```bash
 aero update
 ```
 
-The goal is that users do not need to perform two separate update operations for Arch and Aero.
+Das Ziel ist, dass Nutzer nicht zwei getrennte Update-Vorgänge für Arch und Aero durchführen müssen.
 
-Aero updates should also be able to provide an appropriate "What's New" page for updated Aero components. Arch-only updates should not trigger Aero release notes.
+Aero-Updates sollen außerdem eine passende „Was ist neu?“-Seite für aktualisierte Aero-Komponenten anzeigen können. Reine Arch-Updates sollen keine Aero-Release-Notes auslösen.
 
 ### Aero Repository
 
-Aero will maintain its own package repository for Aero components, using free infrastructure such as GitHub during the initial development stages.
+Aero soll ein eigenes Paket-Repository für Aero-Komponenten betreiben. Während der ersten Entwicklungsphasen soll dafür kostenlose Infrastruktur wie GitHub verwendet werden.
 
-Planned packages include:
+Geplante Pakete:
 
 ```text
 aero-shell
@@ -264,35 +264,35 @@ aero-desktop
 
 ### Aero ISO
 
-Aero will eventually provide a bootable ISO built with Archiso.
+Aero soll später eine bootfähige ISO bereitstellen, die mit Archiso erstellt wird.
 
-Planned development flow:
+Geplanter Entwicklungsablauf:
 
 ```text
-Aero development
+Aero-Entwicklung
         ↓
-VM testing
+VM-Tests
         ↓
-Aero configuration
+Aero-Konfiguration
         ↓
-Package builds
+Paket-Builds
         ↓
 Archiso
         ↓
 Aero ISO
         ↓
-USB / Live system
+USB / Live-System
         ↓
 Installation
 ```
 
-The ISO must be tested in a fresh virtual machine before a release is considered ready.
+Die ISO muss vor einem Release in einer frischen virtuellen Maschine getestet werden.
 
-## Versioning
+## Versionierung
 
-Aero has its own version number, independent of the Arch Linux rolling base.
+Aero besitzt eine eigene Versionsnummer, unabhängig von der Rolling-Release-Basis von Arch Linux.
 
-Example:
+Beispiel:
 
 ```text
 AERO OS       1.2.0
@@ -304,49 +304,49 @@ Aero Studio   1.0.0
 Arch Base     Rolling
 ```
 
-An Arch Linux update does not automatically change the Aero version.
+Ein Arch-Linux-Update ändert die Aero-Version nicht automatisch.
 
 ## Design
 
-Aero's visual identity is based on:
+Die visuelle Identität von Aero basiert auf:
 
-- OLED deep dark: `#000000`
-- amber accent
-- monospace typography
-- technical, uncluttered interfaces
-- subtle transparency
-- minimal animation
+- OLED-Tiefschwarz: `#000000`
+- bernsteinfarbener Akzent
+- Monospace-Schrift
+- technische, übersichtliche Oberflächen
+- dezente Transparenz
+- minimale Animationen
 
-The `>>` Aero symbol is intended to be a central visual identifier, especially for application and taskbar icons.
+Das `>>`-Aero-Symbol soll ein zentrales visuelles Erkennungsmerkmal sein, insbesondere für Anwendungs- und Taskleisten-Symbole.
 
-## Development
+## Entwicklung
 
-Aero is being developed primarily in a Linux virtual machine during the early stages.
+Aero wird in den frühen Entwicklungsphasen hauptsächlich in einer Linux-VM entwickelt.
 
-A Windows shared folder may be used as a temporary file-transfer mechanism between the Windows host and the development VM.
+Ein Windows-Shared-Ordner kann vorübergehend zum Übertragen von Dateien zwischen dem Windows-Host und der Entwicklungs-VM verwendet werden.
 
-**The Windows shared folder is not part of Aero OS and is never intended to be included in the final Aero ISO or installed system.**
+**Der Windows-Shared-Ordner ist kein Bestandteil von Aero OS und soll niemals in die finale Aero-ISO oder das installierte System aufgenommen werden.**
 
-The actual Aero source tree, build system, configuration and release artifacts belong to the Linux development environment and Git repository.
+Der eigentliche Aero-Quellcode, das Build-System, die Konfiguration und die Release-Artefakte gehören zur Linux-Entwicklungsumgebung und zum GitHub-Repository.
 
-## Development order
+## Entwicklungsreihenfolge
 
-The project is intentionally being built in stages.
+Das Projekt wird bewusst in mehreren Phasen aufgebaut.
 
-### Phase 1 — Foundation
+### Phase 1 — Grundlagen
 
-- Arch Linux base
-- Aero base
+- Arch-Linux-Basis
+- Aero-Basis
 - Aero Shell
-- Aero design
-- Aero versioning
+- Aero-Design
+- Aero-Versionierung
 
-### Phase 2 — Interface
+### Phase 2 — Oberfläche
 
 - Wayland
 - Aero Desktop
 - Aero HUD
-- F12 shell access
+- F12-Shell-Zugriff
 
 ### Phase 3 — System
 
@@ -355,7 +355,7 @@ The project is intentionally being built in stages.
 - Aero Update
 - Aero Repository
 
-### Phase 4 — Applications
+### Phase 4 — Anwendungen
 
 - Aero Browser
 - Aero Private
@@ -366,15 +366,15 @@ The project is intentionally being built in stages.
 
 - Archiso
 - Aero ISO
-- live system
-- installer
-- release process
+- Live-System
+- Installer
+- Release-Prozess
 
-## Repository structure
+## Repository-Struktur
 
-The repository will evolve as development progresses. The intended structure will be modular rather than placing the entire operating system into a single script or application.
+Das Repository wird sich mit der Entwicklung weiterentwickeln. Die geplante Struktur soll modular sein, anstatt das gesamte Betriebssystem in ein einziges Skript oder eine einzige Anwendung zu packen.
 
-A future structure may look similar to:
+Eine zukünftige Struktur könnte ungefähr so aussehen:
 
 ```text
 aeron-os/
@@ -396,13 +396,13 @@ aeron-os/
 └── LICENSE
 ```
 
-This structure is a target for the project and does not imply that all components already exist.
+Diese Struktur ist ein Ziel für das Projekt und bedeutet nicht, dass alle Komponenten bereits existieren.
 
-## Backups and releases
+## Backups und Releases
 
-Important working states should be committed and tagged in Git before major changes.
+Wichtige funktionierende Entwicklungsstände sollten vor größeren Änderungen in Git committed und getaggt werden.
 
-Example:
+Beispiel:
 
 ```text
 v0.1.0
@@ -412,12 +412,12 @@ v0.3.0
 v1.0.0
 ```
 
-This makes it possible to return to a known working state during development.
+Dadurch kann während der Entwicklung jederzeit auf einen bekannten funktionierenden Stand zurückgegriffen werden.
 
-## License
+## Lizenz
 
-Aero OS is released under the MIT License. See [LICENSE](LICENSE).
+Aero OS wird unter der MIT-Lizenz veröffentlicht. Siehe [LICENSE](LICENSE).
 
-## Project repository
+## Projekt-Repository
 
 https://github.com/LordLOLQDH/aeron-os
