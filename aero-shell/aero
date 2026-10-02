@@ -1,38 +1,87 @@
 #!/usr/bin/env bash
-# Aero Shell – frühes Entwicklungsgrundgerüst
-# Ziel: schneller Aero-Zugriff auf normale Linux-Funktionen.
+# Aero Shell – zentrale Kommando-Schnittstelle
 set -euo pipefail
 
-AERO_VERSION="0.1.0-dev"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+AERO_VERSION="$(cat "$ROOT/VERSION" 2>/dev/null || printf '%s' '0.1.0-dev')"
+CONFIG="$ROOT/aero.conf"
+
+usage() {
+  cat <<'EOF'
+Aero Shell
+
+Verwendung:
+  aero                 Aero Shell starten
+  aero --version       Version anzeigen
+  aero status          Aero-Systemstatus anzeigen
+  aero update          Arch und Aero gemeinsam aktualisieren
+  aero rescue -on      Rescue-Konsole öffnen
+  aero rescue -full    vollständige Rescue-Umgebung
+  aero search BEGRIFF  Websuche öffnen
+  aero web URL         URL öffnen
+  aero download URL    Datei herunterladen
+  aero help            Hilfe anzeigen
+EOF
+}
+
+open_url() {
+  command -v xdg-open >/dev/null 2>&1 || {
+    echo "xdg-open ist nicht installiert."
+    return 1
+  }
+  xdg-open "$1" >/dev/null 2>&1 &
+}
 
 case "${1:-}" in
-  --version|-v)
-    echo "Aero Shell ${AERO_VERSION}"
+  ""|shell)
+    exec zsh -l
+    ;;
+  --version|-v|version)
+    echo "Aero Shell $AERO_VERSION"
+    ;;
+  help|-h|--help)
+    usage
+    ;;
+  status)
+    echo "AERO OS"
+    echo "Version: $AERO_VERSION"
+    echo "Basis:   Arch Linux"
+    echo "Shell:   Zsh"
+    echo "Config:  $CONFIG"
+    if [[ -r /etc/os-release ]]; then
+      . /etc/os-release
+      echo "System:  ${PRETTY_NAME:-unbekannt}"
+    fi
     ;;
   update)
-    exec "$(dirname "$0")/../aero-update/aero-update" update
+    exec "$ROOT/aero-update/aero-update" update
     ;;
   rescue)
-    exec "$(dirname "$0")/../aero-rescue/aero-rescue" "${@:2}"
+    shift
+    exec "$ROOT/aero-rescue/aero-rescue" "$@"
     ;;
   search)
     shift
-    if command -v xdg-open >/dev/null 2>&1; then
-      xdg-open "https://duckduckgo.com/?q=$(printf '%s' "$*" | sed 's/ /+/g')" >/dev/null 2>&1 &
-    else
-      echo "Suche: $*"
-    fi
+    [[ $# -gt 0 ]] || { echo "Verwendung: aero search BEGRIFF"; exit 2; }
+    query="$*"
+    encoded="$(printf '%s' "$query" | sed 's/ /+/g')"
+    open_url "https://duckduckgo.com/?q=$encoded"
     ;;
   web)
-    shift
-    command -v xdg-open >/dev/null 2>&1 && xdg-open "$1" >/dev/null 2>&1 &
+    [[ $# -ge 2 ]] || { echo "Verwendung: aero web URL"; exit 2; }
+    open_url "$2"
     ;;
   download)
-    shift
-    command -v curl >/dev/null 2>&1 || { echo "curl ist nicht installiert."; exit 1; }
-    curl -LO "$1"
+    [[ $# -ge 2 ]] || { echo "Verwendung: aero download URL"; exit 2; }
+    command -v curl >/dev/null 2>&1 || {
+      echo "curl ist nicht installiert."
+      exit 1
+    }
+    curl -LO -- "$2"
     ;;
   *)
-    exec zsh -l
+    echo "Unbekannter Aero-Befehl: $1"
+    echo "Nutze 'aero help' für eine Übersicht."
+    exit 2
     ;;
 esac
