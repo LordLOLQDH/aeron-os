@@ -18,6 +18,22 @@ Aero OS is currently in the foundation stage. The project is being built increme
 
 Nothing in this repository should currently be considered production-ready.
 
+## Branding
+
+The Aero branding assets are stored centrally in:
+
+`assets/branding/logos/`
+
+Current logo assets:
+
+![Aero logo 1](assets/branding/logos/aero-logo-1.png)
+
+![Aero logo 2](assets/branding/logos/aero-logo-2.png)
+
+![Aero logo 3](assets/branding/logos/aero-logo-3.png)
+
+These files are the project's original uploaded logo assets and can be reused by Aero components such as the boot screen, desktop, HUD, installer, documentation and future application interfaces.
+
 ## Core principles
 
 - **Shell first** — the Aero Shell is the central working environment.
@@ -350,7 +366,10 @@ aeron-os/
 ├── iso/
 ├── docs/
 ├── assets/
-└── README.md
+│   └── branding/
+│       └── logos/
+├── README.md
+└── LICENSE
 ```
 
 This structure is a target for the project and does not imply that all components already exist.
