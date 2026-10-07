@@ -1,6 +1,6 @@
 # Radon Pakete
 
-Hier entstehen später die Build-Definitionen für Radon-Komponenten.
+Hier entstehen die Build-Definitionen für Radon-Komponenten auf Linux-Mint-Basis.
 
 Geplante Pakete:
 
