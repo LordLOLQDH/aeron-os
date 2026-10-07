@@ -1,11 +1,11 @@
 # Radon OS Architektur
 
-Radon OS nutzt Arch Linux als technische Basis und ergänzt eine eigene, modulare Radon-Schicht.
+Radon OS nutzt **Linux Mint** als technische Basis und ergänzt eine eigene modulare Radon-Schicht.
 
 ```text
 Hardware
    ↓
-Arch Linux
+Linux Mint
    ↓
 Radon OS
    ├── Radon Shell
@@ -16,6 +16,6 @@ Radon OS
    └── Radon Update
 ```
 
-Anwendungskomponenten wie Browser, Private, Search und Studio werden nur implementiert, wenn sie einen sinnvollen Zweck erfüllen.
+Linux-Mint-Systemkomponenten bleiben erhalten. Radon ergänzt sie, statt grundlegende Linux-Funktionen unnötig neu zu erfinden.
 
-Die Shell bleibt unabhängig von der grafischen Oberfläche nutzbar. GUI-Komponenten dürfen Shell-Funktionen ergänzen, sollen sie aber nicht voraussetzen.
+Die Shell bleibt unabhängig von der grafischen Oberfläche nutzbar.
