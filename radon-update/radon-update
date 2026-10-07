@@ -6,17 +6,16 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 case "${1:-}" in
   update)
     echo "Radon Update"
-    echo "Aktualisiere Arch Linux und – bei einem Git-Checkout – die Radon-Quellen."
-    if command -v sudo >/dev/null 2>&1 && command -v pacman >/dev/null 2>&1; then
-      sudo pacman -Syu
+    echo "Aktualisiere Linux Mint und die Radon-Komponenten."
+    if command -v sudo >/dev/null 2>&1 && command -v apt >/dev/null 2>&1; then
+      sudo apt update
+      sudo apt upgrade -y
     else
-      echo "pacman/sudo nicht verfügbar – Entwicklungsumgebung erkannt."
+      echo "apt/sudo nicht verfügbar – Entwicklungsumgebung erkannt."
     fi
     if command -v git >/dev/null 2>&1 && git -C "$ROOT" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
       echo "Aktualisiere Radon-Quellen …"
       git -C "$ROOT" pull --ff-only || echo "Radon-Quellen konnten nicht automatisch aktualisiert werden."
-    else
-      echo "Kein Git-Checkout erkannt; Radon-Pakete werden über den jeweiligen Paketweg aktualisiert."
     fi
     ;;
   --version|-v) echo "Radon Update $(cat "$ROOT/VERSION")" ;;
