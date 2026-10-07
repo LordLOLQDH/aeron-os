@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+case "${1:-}" in
+  update)
+    echo "Radon Update"
+    echo "Aktualisiere Arch Linux und Radon-Komponenten."
+    if command -v sudo >/dev/null 2>&1 && command -v pacman >/dev/null 2>&1; then
+      sudo pacman -Syu
+    else
+      echo "pacman/sudo nicht verfügbar – Entwicklungsumgebung erkannt."
+    fi
+    ;;
+  --version|-v) echo "Radon Update $(cat "$(cd "$(dirname "$0")/.." && pwd)/VERSION")" ;;
+  *) echo "Verwendung: radon update"; exit 1 ;;
+esac
