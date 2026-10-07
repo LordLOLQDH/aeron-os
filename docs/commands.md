@@ -1,6 +1,6 @@
 # Radon Befehle
 
-Radon OS ergänzt normale Linux-Befehle durch eine zentrale Kommandoebene.
+Radon OS ergänzt normale Linux-Mint-Befehle durch eine zentrale Kommandoebene.
 
 | Befehl | Zweck |
 |---|---|
@@ -9,7 +9,7 @@ Radon OS ergänzt normale Linux-Befehle durch eine zentrale Kommandoebene.
 | `radon help` | Befehlsübersicht anzeigen |
 | `radon info` | Radon- und Systeminformationen anzeigen |
 | `radon status` | Systemstatus anzeigen |
-| `radon update` | Arch Linux und Radon gemeinsam aktualisieren |
+| `radon update` | Linux Mint und Radon gemeinsam aktualisieren |
 | `radon doctor` | Grundlegende Diagnose |
 | `radon repair` | Reparaturmodus mit Bestätigung |
 | `radon rescue -on` | Rescue-Konsole |
@@ -19,4 +19,4 @@ Radon OS ergänzt normale Linux-Befehle durch eine zentrale Kommandoebene.
 | `radon download URL` | Datei herunterladen |
 | `radonfetch` | reale Systeminformationen anzeigen |
 
-Normale Linux-Befehle wie `pacman` und `systemctl` bleiben verfügbar.
+Normale Linux-Mint-Befehle wie `apt`, `apt-get`, `dpkg` und `systemctl` bleiben verfügbar.
