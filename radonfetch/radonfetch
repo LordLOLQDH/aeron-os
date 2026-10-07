@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+VERSION_FILE="$(cd "$(dirname "$0")/.." && pwd)/VERSION"
+VERSION="$(cat "$VERSION_FILE" 2>/dev/null || printf '%s' '0.3.0-dev')"
+
+os_name="Radon OS"
+[[ -r /etc/os-release ]] && . /etc/os-release && os_name="${PRETTY_NAME:-Radon OS}"
+kernel="$(uname -sr)"
+arch="$(uname -m)"
+uptime_value="$(uptime -p 2>/dev/null || true)"
+cpu="$(awk -F: '/model name/{gsub(/^ +/,"",$2); print $2; exit}' /proc/cpuinfo 2>/dev/null || printf '%s' 'unbekannt')"
+memory="$(free -h 2>/dev/null | awk '/^Mem:/{print $3 " / " $2}' || printf '%s' 'unbekannt')"
+disk="$(df -h / 2>/dev/null | awk 'NR==2{print $3 " / " $2 " (" $5 ")"}' || printf '%s' 'unbekannt')"
+packages="$(pacman -Qq 2>/dev/null | wc -l | tr -d ' ')"
+
+printf '\033[1;38;5;226m        ☢\033[0m   \033[1;37mRADON\033[0m \033[1;38;5;226mOS\033[0m\n'
+printf '  \033[1;38;5;226mRADON OS\033[0m\n\n'
+printf '  \033[1;37mOS           \033[0m %s\n' "$os_name"
+printf '  \033[1;37mVersion      \033[0m %s\n' "$VERSION"
+printf '  \033[1;37mBase         \033[0m Arch Linux\n'
+printf '  \033[1;37mKernel       \033[0m %s\n' "$kernel"
+printf '  \033[1;37mShell        \033[0m Radon Shell\n'
+printf '  \033[1;37mUptime       \033[0m %s\n' "${uptime_value:-unbekannt}"
+printf '  \033[1;37mPackages     \033[0m %s\n' "$packages"
+printf '  \033[1;37mCPU          \033[0m %s\n' "$cpu"
+printf '  \033[1;37mMemory       \033[0m %s\n' "$memory"
+printf '  \033[1;37mDisk         \033[0m %s\n' "$disk"
+printf '  \033[1;37mArchitecture \033[0m %s\n' "$arch"
