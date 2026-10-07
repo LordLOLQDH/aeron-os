@@ -12,9 +12,9 @@ Radon Shell
 Verwendung:
   radon                 Radon Shell starten
   radon --version       Version anzeigen
-  radon info            Radon-Systeminformationen anzeigen
+  radon info            Systeminformationen anzeigen
   radon status          Systemstatus anzeigen
-  radon update          Radon und Arch Linux gemeinsam aktualisieren
+  radon update          Linux Mint und Radon aktualisieren
   radon doctor          Grundlegende Systemdiagnose
   radon repair          Reparaturmodus mit Sicherheitsabfrage
   radon rescue ...      Radon Rescue aufrufen
@@ -26,10 +26,7 @@ EOF
 }
 
 open_url() {
-  command -v xdg-open >/dev/null 2>&1 || {
-    echo "xdg-open ist nicht installiert."
-    return 1
-  }
+  command -v xdg-open >/dev/null 2>&1 || { echo "xdg-open ist nicht installiert."; return 1; }
   xdg-open "$1" >/dev/null 2>&1 &
 }
 
@@ -40,7 +37,7 @@ case "${1:-}" in
   info|status)
     echo "RADON OS"
     echo "Version: $RADON_VERSION"
-    echo "Basis:   Arch Linux"
+    echo "Basis:   Linux Mint"
     echo "Shell:   Radon Shell"
     echo "Config:  $CONFIG"
     [[ -r /etc/os-release ]] && . /etc/os-release && echo "System:  ${PRETTY_NAME:-unbekannt}"
@@ -48,7 +45,8 @@ case "${1:-}" in
   update) exec "$ROOT/radon-update/radon-update" update ;;
   doctor)
     echo "Radon Doctor"
-    command -v pacman >/dev/null 2>&1 && echo "[ OK ] pacman" || echo "[ -- ] pacman nicht verfügbar"
+    command -v apt >/dev/null 2>&1 && echo "[ OK ] apt" || echo "[ -- ] apt nicht verfügbar"
+    command -v dpkg >/dev/null 2>&1 && echo "[ OK ] dpkg" || echo "[ -- ] dpkg nicht verfügbar"
     command -v systemctl >/dev/null 2>&1 && echo "[ OK ] systemd" || echo "[ -- ] systemd nicht verfügbar"
     [[ -r /etc/os-release ]] && echo "[ OK ] /etc/os-release" || echo "[ -- ] /etc/os-release"
     ;;
