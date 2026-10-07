@@ -1,25 +1,21 @@
-# Aero OS Architektur
+# Radon OS Architektur
 
-## Grundsatz
-
-Aero OS nutzt Arch Linux als Basis, baut aber eine eigene modulare Aero-Schicht darüber.
+Radon OS nutzt Arch Linux als technische Basis und ergänzt eine eigene, modulare Radon-Schicht.
 
 ```text
 Hardware
    ↓
 Arch Linux
    ↓
-Aero Base
-   ├── Aero Shell
-   ├── Aero Desktop
-   ├── Aero HUD
-   ├── Aero Rescue
-   ├── Aero Boot
-   └── Aero Update
+Radon OS
+   ├── Radon Shell
+   ├── Radon Desktop
+   ├── Radon HUD
+   ├── Radon Rescue
+   ├── Radon Boot
+   └── Radon Update
 ```
 
-Spätere Anwendungskomponenten wie Browser, Private, Search und Studio werden auf dieser Basis ergänzt.
-
-## Entwicklungsregel
+Anwendungskomponenten wie Browser, Private, Search und Studio werden nur implementiert, wenn sie einen sinnvollen Zweck erfüllen.
 
 Die Shell bleibt unabhängig von der grafischen Oberfläche nutzbar. GUI-Komponenten dürfen Shell-Funktionen ergänzen, sollen sie aber nicht voraussetzen.

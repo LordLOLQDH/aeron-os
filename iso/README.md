@@ -1,11 +1,13 @@
-# Aero ISO
+# Radon OS ISO
 
-Hier wird später die Archiso-Konfiguration für die bootfähige Aero-ISO liegen.
+Hier entsteht später die Archiso-Konfiguration für eine echte bootfähige Radon-OS-ISO.
 
 Die ISO darf keine Abhängigkeit vom Windows-Shared-Ordner enthalten.
 
 Geplanter Ablauf:
 
-```text
-Arch-Basis → Aero-Pakete → Konfiguration → Archiso → ISO → VM-Test
-```
+~~~text
+Arch-Basis → Radon-Pakete → Konfiguration → Archiso → ISO → VM-Test → Hardware-Test
+~~~
+
+Eine finale ISO wird erst als fertig bezeichnet, wenn sie tatsächlich bootet und installiert werden kann.

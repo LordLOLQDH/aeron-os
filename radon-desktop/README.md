@@ -1,6 +1,6 @@
-# Aero Desktop
+# Radon Desktop
 
-Frühes Entwicklungsgerüst für die grafische Aero-Oberfläche.
+Frühes Entwicklungsgerüst für die grafische Radon-OS-Oberfläche.
 
 Zielplattform ist Wayland. Der Desktop soll Shell-first bleiben und später Taskleiste, Launcher, Fensterverwaltung und Touch-Unterstützung bereitstellen.
 

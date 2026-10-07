@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+RADON_VERSION="$(cat "$ROOT/VERSION" 2>/dev/null || printf '%s' '0.3.0-dev')"
+CONFIG="$ROOT/radon.conf"
+
+usage() {
+  cat <<'EOF'
+Radon Shell
+
+Verwendung:
+  radon                 Radon Shell starten
+  radon --version       Version anzeigen
+  radon info            Radon-Systeminformationen anzeigen
+  radon status          Systemstatus anzeigen
+  radon update          Radon und Arch Linux gemeinsam aktualisieren
+  radon doctor          Grundlegende Systemdiagnose
+  radon repair          Reparaturmodus mit Sicherheitsabfrage
+  radon rescue ...      Radon Rescue aufrufen
+  radon search BEGRIFF  Websuche öffnen
+  radon web URL         URL öffnen
+  radon download URL    Datei herunterladen
+  radon help            Hilfe anzeigen
+EOF
+}
+
+open_url() {
+  command -v xdg-open >/dev/null 2>&1 || {
+    echo "xdg-open ist nicht installiert."
+    return 1
+  }
+  xdg-open "$1" >/dev/null 2>&1 &
+}
+
+case "${1:-}" in
+  ""|shell) exec zsh -l ;;
+  --version|-v|version) echo "Radon OS $RADON_VERSION" ;;
+  help|-h|--help) usage ;;
+  info|status)
+    echo "RADON OS"
+    echo "Version: $RADON_VERSION"
+    echo "Basis:   Arch Linux"
+    echo "Shell:   Radon Shell"
+    echo "Config:  $CONFIG"
+    [[ -r /etc/os-release ]] && . /etc/os-release && echo "System:  ${PRETTY_NAME:-unbekannt}"
+    ;;
+  update) exec "$ROOT/radon-update/radon-update" update ;;
+  doctor)
+    echo "Radon Doctor"
+    command -v pacman >/dev/null 2>&1 && echo "[ OK ] pacman" || echo "[ -- ] pacman nicht verfügbar"
+    command -v systemctl >/dev/null 2>&1 && echo "[ OK ] systemd" || echo "[ -- ] systemd nicht verfügbar"
+    [[ -r /etc/os-release ]] && echo "[ OK ] /etc/os-release" || echo "[ -- ] /etc/os-release"
+    ;;
+  repair)
+    echo "Radon Repair kann Systemänderungen durchführen."
+    read -r -p "Reparatur wirklich starten? [ja/NEIN] " answer
+    [[ "$answer" == "ja" ]] || { echo "Abgebrochen."; exit 0; }
+    echo "Keine automatische Reparatur ist in dieser Entwicklungsversion aktiviert."
+    ;;
+  rescue) shift; exec "$ROOT/radon-rescue/radon-rescue" "$@" ;;
+  search)
+    shift
+    [[ $# -gt 0 ]] || { echo "Verwendung: radon search BEGRIFF"; exit 2; }
+    query="$*"
+    encoded="$(printf '%s' "$query" | sed 's/ /+/g')"
+    open_url "https://duckduckgo.com/?q=$encoded"
+    ;;
+  web)
+    [[ $# -ge 2 ]] || { echo "Verwendung: radon web URL"; exit 2; }
+    open_url "$2"
+    ;;
+  download)
+    [[ $# -ge 2 ]] || { echo "Verwendung: radon download URL"; exit 2; }
+    command -v curl >/dev/null 2>&1 || { echo "curl ist nicht installiert."; exit 1; }
+    curl -LO -- "$2"
+    ;;
+  *) echo "Unbekannter Radon-Befehl: $1"; echo "Nutze 'radon help'."; exit 2 ;;
+esac

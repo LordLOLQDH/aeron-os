@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+case "${1:-}" in
+  -on)
+    echo "Radon Rescue: Diagnosekonsole"
+    echo "Sichere Diagnosefunktionen können hier schrittweise ergänzt werden."
+    ;;
+  -full)
+    echo "Radon Rescue: unabhängiger Rescue-Boot ist noch nicht implementiert."
+    echo "Es werden keine Änderungen am System vorgenommen."
+    ;;
+  --version|-v)
+    echo "Radon Rescue $(cat "$(cd "$(dirname "$0")/.." && pwd)/VERSION")"
+    ;;
+  *)
+    echo "Verwendung: radon rescue -on | -full"
+    exit 1
+    ;;
+esac

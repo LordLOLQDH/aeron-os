@@ -14,5 +14,5 @@ work/
 .vagrant/
 .virtualbox/
 
-# Windows-Shared-Ordner: niemals Teil des Aero-Builds
+# Windows-Shared-Ordner: niemals Teil des Radon-Builds
 windows-shared/
