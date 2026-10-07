@@ -1,11 +1,13 @@
-# Aero Versionierung
+# Radon OS Versionierung
 
-Aero verwendet eine eigene Versionsnummer unabhängig von Arch Linux.
+Radon OS verwendet eine eigene Versionsnummer unabhängig von Arch Linux.
 
 Aktueller Entwicklungsstand:
 
 ```text
-AERO OS 0.1.0-dev
+RADON OS 0.3.0-dev
 ```
 
-Komponenten können später eigene Versionen erhalten. Ein Arch-Rolling-Update ändert die Aero-Version nicht automatisch.
+Die zentrale Quelle ist die Datei `VERSION`. Bei relevanten Releases müssen Versionsanzeige, README, Installer, radonfetch und relevante Systemdateien gemeinsam aktualisiert werden.
+
+Arch Linux bleibt ein Rolling-Release-System und ändert die Radon-Version nicht automatisch.
