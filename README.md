@@ -2,89 +2,75 @@
 
 > Fast. Minimal. Powerful.
 
-Radon OS ist ein minimalistisches, schnelles und tastaturorientiertes Linux-System auf Basis von Arch Linux. Es soll eine eigene Identität und eigene Systemwerkzeuge besitzen, ohne seine Arch-Linux-Basis zu verschleiern.
+Radon OS ist ein minimalistisches, schnelles und tastaturorientiertes Linux-System auf **Linux Mint**-Basis.
 
 ## Status
 
 **Frühe Entwicklung / Pre-Alpha**
 
-Das Repository enthält bereits eine Grundlage für Radon Shell, Radon Update, Radon Rescue, Radonfetch, Konfiguration und automatisierte Shell-Tests. Desktop, Installer und bootfähige ISO befinden sich noch im Aufbau und werden nicht als fertig dargestellt.
+Das Repository enthält die Radon-Grundlage mit Shell, Update-System, Rescue-Komponente, Radonfetch, Konfiguration, Dokumentation und Tests. Desktop, Installer und finale ISO werden erst als fertig bezeichnet, wenn sie tatsächlich funktionieren und getestet wurden.
 
 ## Identität
 
 - Name: **Radon OS**
-- Basis: **Arch Linux**
-- Architektur: zunächst **x86_64**
+- Basis: **Linux Mint**
+- Zielarchitektur: zunächst **x86_64**
 - Hauptfarben: Schwarz `#000000`, Weiß `#FFFFFF`, Radioaktivitätsgelb `#DFFF00`
 - Shell: **Radon Shell**
 - Systeminfo: **radonfetch**
 - Rettungsumgebung: **Radon Rescue**
 
-Das Radioaktivitätszeichen ☢ ist das Markensymbol von Radon OS und kein Warnschild-Element.
-
 ## Radon Shell
 
-Die Radon Shell basiert auf Zsh und ergänzt die normale Linux-Umgebung um zentrale Radon-Befehle.
+Die Radon Shell basiert auf Zsh und ergänzt die normale Linux-Mint-Umgebung um zentrale Radon-Befehle.
 
-~~~bash
+```bash
 radon help
 radon info
 radon doctor
 radon update
 radon rescue -on
 radonfetch
-~~~
+```
 
-Normale Linux-Befehle bleiben verfügbar.
+Normale Linux-Mint-/Linux-Befehle bleiben verfügbar.
 
 ## Radon Update
 
-Der zentrale Update-Befehl ist `radon update`. Er führt den normalen Arch-Linux-Updatepfad über `sudo pacman -Syu` aus. Der normale Arch-Befehl bleibt ebenfalls vollständig verfügbar.
+Der zentrale Update-Befehl ist `radon update`. Er aktualisiert das Linux-Mint-System über APT und aktualisiert – wenn Radon aus einem Git-Checkout läuft – anschließend die Radon-Quellen.
 
-## Radonfetch
+Der normale Mint-Befehl bleibt ebenfalls verfügbar:
 
-`radonfetch` liest reale Informationen aus dem laufenden System aus, unter anderem Kernel, CPU, Speicher, Datenträger, Paketanzahl und Architektur.
-
-## Radon Rescue
-
-Radon Rescue ist für Diagnose und spätere Reparaturfunktionen vorgesehen. Gefährliche Reparaturen werden nicht stillschweigend ausgeführt. Die aktuelle Entwicklungsfassung enthält noch keinen vollständigen unabhängigen Rescue-Boot.
-
-## Geplante Systemkomponenten
-
-- Radon Desktop
-- Radon HUD
-- Radon Boot
-- Radon Installer
-- Radon Studio
-- optionale Browser-/Search-Komponenten
-
-Eigene Apps werden nur ergänzt, wenn sie einen echten Nutzen bieten.
+```bash
+sudo apt update
+sudo apt upgrade
+```
 
 ## Installation
 
-Die aktuelle Shell-Grundlage kann mit `./radon-shell/install.sh` installiert werden. Eine vollständige, getestete Installations-ISO ist **noch nicht fertig**. Die ISO muss später mit Archiso gebaut und sowohl in einer VM als auch auf echter x86_64-Hardware geprüft werden.
+Die aktuelle Shell-Grundlage kann mit `./radon-shell/install.sh` installiert werden.
+
+Eine vollständige, getestete Radon-OS-Installations-ISO ist **noch nicht fertig**. Der zukünftige Build muss auf Linux-Mint-Basis erfolgen und in einer VM sowie auf echter x86_64-Hardware getestet werden.
 
 ## Entwicklung
 
-Vor größeren Änderungen soll ein funktionierender Git-Stand committed und bei wichtigen Meilensteinen getaggt werden. Ein Windows-Shared-Ordner ist ausschließlich ein Entwicklungs-/Transferhilfsmittel und darf nicht Bestandteil der finalen ISO oder Installation werden.
+Die Entwicklungs-VM verwendet Linux Mint. Ein Windows-Shared-Ordner dient ausschließlich zum Dateitransfer und darf niemals Bestandteil der finalen ISO oder Installation werden.
 
 ## Version
 
 Die zentrale Version steht in `VERSION`.
 
-~~~text
+```text
 Radon OS 0.3.0-dev
-~~~
-
-Bei relevanten Versionen werden README, Installer, radonfetch und weitere sichtbare Systemdateien gemeinsam aktualisiert.
+```
 
 ## Open Source und Kosten
 
-Radon OS soll möglichst vollständig mit kostenloser und Open-Source-Software entwickelt und betrieben werden. Grundlegende Systemfunktionen sollen keine kostenpflichtige Cloud voraussetzen.
+Radon OS soll möglichst vollständig mit kostenloser und Open-Source-Software entwickelt und betrieben werden.
 
 ## Credits
 
-Radon OS basiert auf Arch Linux und verwendet weitere freie/Open-Source-Komponenten, soweit diese später in das System integriert werden. Fremde Projekte werden nicht als eigene Entwicklung ausgegeben.
+Radon OS basiert auf Linux Mint und verwendet freie/Open-Source-Komponenten. Fremde Projekte werden nicht als eigene Entwicklung ausgegeben.
 
 ## Lizenz
 
@@ -93,5 +79,3 @@ Radon OS wird unter der MIT-Lizenz veröffentlicht. Siehe `LICENSE`.
 ## Repository
 
 https://github.com/LordLOLQDH/aeron-os
-
-Hinweis: Der technische GitHub-Repository-Name ist aktuell noch nicht umbenannt. Die Projektidentität und alle aktuellen sichtbaren Projektbestandteile werden auf **Radon OS** migriert.
