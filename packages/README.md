@@ -1,14 +1,14 @@
-# Aero Pakete
+# Radon Pakete
 
-Hier entstehen später die Build-Definitionen für die Aero-Pakete.
+Hier entstehen später die Build-Definitionen für Radon-Komponenten.
 
 Geplante Pakete:
 
-- `aero-shell`
-- `aero-desktop`
-- `aero-hud`
-- `aero-rescue`
-- `aero-browser`
-- `aero-private`
-- `aero-search`
-- `aero-studio`
+- radon-shell
+- radon-desktop
+- radon-hud
+- radon-rescue
+- radon-browser
+- radon-private
+- radon-search
+- radon-studio
