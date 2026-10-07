@@ -1,0 +1,31 @@
+name: Radon OS Tests
+
+on:
+  push:
+    paths:
+      - "radon-shell/**"
+      - "radon-update/**"
+      - "radon-rescue/**"
+      - "radonfetch/**"
+      - "VERSION"
+      - "radon.conf"
+      - "tests/**"
+      - ".github/workflows/radon-shell.yml"
+  pull_request:
+    paths:
+      - "radon-shell/**"
+      - "radon-update/**"
+      - "radon-rescue/**"
+      - "radonfetch/**"
+      - "VERSION"
+      - "radon.conf"
+      - "tests/**"
+      - ".github/workflows/radon-shell.yml"
+
+jobs:
+  shell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Radon OS Shell testen
+        run: bash tests/test-shell.sh
